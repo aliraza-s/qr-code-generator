@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    background-image: linear-gradient(to right top, #051937, #1e1b42, #381848, #531148, #6b0041);
+    color: #fff;
+}
+
+.wrapper {
+    height: 265px;
+    max-width: 410px;
+    background: #000;
+    border-radius: 7px;
+    padding: 20px 25px 0;
+    transition: height 0.2s ease;
+}
+
+.wrapper.active {
+    height: 530px;
+}
+
+header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+
+header p {
+    margin-top: 5px;
+    color: #aaa;
+    font-size: 17px;
+}
+
+.wrapper .form {
+    margin: 20px 0 25px;
+}
+
+.form:where(input, button) {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.1s ease;
+}
+
+.form input {
+    font-size: 18px;
+    padding: 5px 17px;
+    border: 1px solid #ffffff;
+    background: #000000;
+}
+
+.form input:focus {
+    box-shadow: 0 3px 6px rgb(0, 0, 0, 0.13);
+    background: #616161;
+}
+
+.form input::placeholder {
+    color: #bababa;
+}
+
+.form input.active::placeholder {
+    color: #ffffff;
+}
+
+.form button {
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    background: #051937;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+.form button:hover {
+    background: #6B0041;
+}
+
+.form button:active {
+    transform: scale(0.95);
+}
+
+.qr-code {
+    opacity: 0;
+    display: flex;
+    padding: 33px 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+
+.wrapper.active .qr-code {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+    width: 170px;
+}
+
+@media(max-width:430px) {
+    .wrapper {
+        height: 255px;
+        padding: 16px 20px;
+    }
+
+    .wrapper.active {
+        height: 510px;
+    }
+
+    header p {
+        color: #696969;
+    }
+
+    .form:where(input, button) {
+        height: 52px;
+    }
+
+    .qr-code img {
+        width: 160px;
+    }
+}
